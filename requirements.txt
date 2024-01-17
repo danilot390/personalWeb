@@ -1,0 +1,4 @@
+django-allauth 
+django-debug-toolbar 
+whitenoise 
+celery
