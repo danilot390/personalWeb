@@ -17,6 +17,9 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'Contact Me @{self.user.username}'
+    
+    def get_link_ti_whatsapp(self):
+        return f"https://wa.me/{self.phone_number}?text=I'm%20interested%20in%20your%20proffesional%20services."
 
 class SocialMedia(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
