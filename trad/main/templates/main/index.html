@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+
+{% block title %}Home{% endblock title %}
+    
+{% block hero %}
+    {% include 'hero.html' %}
+{% endblock hero %}
+    
+
+{% block content %}
+    {% include 'main/websites.html' %}
+
+    {% include 'main/services.html' %}
+
+    {% include 'main/testimonials.html' %}
+
+    {% include 'main/contactus.html' %}
+{% endblock content %}
+    

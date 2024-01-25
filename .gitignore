@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.DS_Store
+
 # C extensions
 *.so
 
@@ -62,6 +64,7 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 migrations/
+*/static/assets/img/
 # Flask stuff:
 instance/
 .webassets-cache
