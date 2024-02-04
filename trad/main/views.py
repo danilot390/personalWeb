@@ -65,7 +65,7 @@ def process_message_form(request):
             # Save the form data
             form.save()
             success_message = 'Your message has been sent. Thank You!'
-            return render(request, 'main/index.html', {'success_message': success_message})
+            return redirect(reverse('main:index'))
         
         # If the form is not valid or the request method is not POST,
         # redirect back to the index form page
