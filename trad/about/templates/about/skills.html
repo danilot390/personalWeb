@@ -1,0 +1,19 @@
+{% load static %}
+<section class="clients" id="skills">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="clients-slider swiper">
+        <div class="swiper-wrapper alingn-items-center">
+            
+            {% if skills %}
+                {% for skill in skills %}
+                  <div class="swiper-slide"><img height="20px" src="{{ skill.image.url}}" alt="python - developer" class="img-fluid" id=""></div>
+                {% endfor %}
+            {% endif %}
+ 
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+  </div>
+</section>

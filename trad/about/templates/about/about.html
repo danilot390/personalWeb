@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block url_about %}active{% endblock url_about %}
+
+{% block breadcrumbs %}
+    {% include 'breadcrumbs.html' with title='About Us' %}
+{% endblock breadcrumbs %}
+
+{% block content %}
+    
+    {% include "about/company.html" %}
+    
+    {% include "about/skills.html" with skills=skills_company %}
+    
+    {% include "about/portfolio.html" %}
+
+    {% include "about/team.html" %}
+
+{% endblock content %}
+    

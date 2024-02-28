@@ -1,0 +1,19 @@
+{% load static %}
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-left" data-aos-delay="100">
+                <p>
+                {{ company.description }}    
+                </p>
+                <p>
+                    <strong>Mission:</strong> {{ company.mission }} <br>
+                    <strong>Vision:</strong> {{ company.vision }}
+                </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-rigth" data-aos-delay="100">
+                <img src="{% static 'assets/img/TRAD.png' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
