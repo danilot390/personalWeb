@@ -1,5 +1,5 @@
 {% load static %}
-{% if service %}
+{% if inf_company.services %}
 <div class="container" data-aos="fade-up">
     <section id="services" class="services" data-aos="fade-up">
         <div class="container" data-aos="fade-up">
@@ -10,7 +10,7 @@
             </div>
 
             <div class="row">
-                {% for item in service %}
+                {% for item in inf_company.services %}
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-file"></i></div>

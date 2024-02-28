@@ -5,15 +5,15 @@
 
         <div class="clients-slider swiper">
             <div class="swiper-wrapper alingn-items-center">
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/python.png' %}" alt="python - developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/django.png' %}" alt="django-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/php.jpeg' %}" alt="php-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/larvel.png' %}" alt="laravel-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/sql.png' %}" alt="sql-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/postgres.png' %}" alt="postgresql-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/mysql.png' %}" alt="mysql-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/html.png' %}" alt="html-developer" class="img-fluid" id=""></div>
-                <div class="swiper-slide"><img height="20px" src="{% static 'assets/img/skills/bootstrap.png' %}" alt="bootstrap-developer" class="img-fluid" id=""></div> 
+                
+                {% if skills_company %}
+                    
+                    {% for skill in skills_company %}
+                        <div class="swiper-slide"><img height="20px" src="{{ skill.image.url}}" alt="python - developer" class="img-fluid" id=""></div>
+                    {% endfor %}
+                        
+                {% endif %}
+     
             </div>
             <div class="swiper-pagination"></div>
         </div>

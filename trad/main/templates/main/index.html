@@ -1,10 +1,16 @@
 {% extends 'master.html' %}
 
 {% block title %}Home{% endblock title %}
+
+{% block url_home %} active {% endblock url_home %}
     
 {% block hero %}
     {% include 'hero.html' %}
 {% endblock hero %}
+
+
+{% block currentPage %}About Us{% endblock currentPage %}
+    
     
 
 {% block content %}
