@@ -62,5 +62,5 @@ def load_about (request):
     }
 
     # Render the template with the context
-    return render(request, 'about/about.html', context)
+    return render(request, 'about_templates/about.html', context)
     

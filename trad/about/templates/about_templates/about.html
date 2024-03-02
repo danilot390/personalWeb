@@ -11,13 +11,13 @@
 
 {% block content %}
     
-    {% include "about/company.html" %}
+    {% include "about_templates/company.html" %}
     
-    {% include "about/skills.html" with skills=skills_company %}
+    {% include "about_templates/skills.html" with skills=skills_company %}
     
-    {% include "about/portfolio.html" %}
+    {% include "about_templates/portfolio.html" %}
 
-    {% include "about/team.html" %}
+    {% include "about_templates/team.html" %}
 
 {% endblock content %}
     
