@@ -65,14 +65,15 @@ cover/
 # Django stuff:
 # Temporary tests
 __init__.py
-tests/ 
+tests/
 *.log
 settings.py
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
 migrations/
-*/static/assets/img/
+media/
+static/assets/img/
 # Flask stuff:
 instance/
 .webassets-cache
