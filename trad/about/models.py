@@ -19,7 +19,7 @@ class Company(models.Model):
 
     def __str__(self):
         return f'{self.name} at: {self.updated_at}'
-    
+
     def get_link_to_whatsapp(self, message):
         # Generate a link to whatsapp using the phone number with a specific message
         return f"https://wa.me/{self.phone_number}?text={message}"
@@ -40,10 +40,10 @@ class ServiceCompany(models.Model):
 def image_path(instance, filename, path='user'):
     # Get the file extension
     ext = filename.split('.')[-1]
-    
+
     # Determine the model name
     model_name = instance.__class__.__name__.lower()
-    
+
     # Rename the file for the current model
     filename = f'{model_name}_{instance.id}_image.{ext}'
 
@@ -59,10 +59,10 @@ class Employee(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(default='none.jpg', upload_to=image_path)
-    
+
     def __str__(self):
         return f'{self.user.username} - {self.position}'
-     
+
 # Values Model: Model for Company values
 class Values(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
@@ -97,7 +97,7 @@ class Portfolio(models.Model):
     urls = models.URLField(max_length=200, null=True, blank=True)
     git = models.URLField(max_length=200, null=True, blank=True)
     weight = models.IntegerField()
-    image = models.ImageField(default='none.jpg', upload_to=image_path)
+    image = models.ImageField(default='portfolio/none.png', upload_to=image_path)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

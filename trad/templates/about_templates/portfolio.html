@@ -1,6 +1,6 @@
 
 {% if type_project %}
-  
+
 <section id="portfolio" class="portfolio">
     <div class="container" data-aos="fade-up">
 
@@ -13,19 +13,19 @@
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
-            
+
             {% for type in type_project %}
               <li data-filter=".filter-{{type}}">{{ type }}</li>
             {% endfor %}
-          
+
           </ul>
         </div>
       </div>
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-        
+
         {% for project in portfolio %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.type.slang }}">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.type_project.slang }}">
             <div class="portfolio-wrap">
               <img src="{{ project.image.url }}" alt="" class="img-fluid" >
               <div class="portfolio-info">
@@ -37,7 +37,7 @@
                   <a href="{{ project.git }}" title="More Details"><i class="bi bi-github"></i></a>{% endif %}
                 </div>
               </div>
-              
+
             </div>
           </div>
         {% endfor %}

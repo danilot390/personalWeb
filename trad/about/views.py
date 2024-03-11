@@ -19,17 +19,17 @@ def typeProject(portfolio):
             projects[project.type.slang].append(project)
         except KeyError:
             projects[project.type.slang] = [project]
-    
+
     return projects
 
 def load_about (request):
     """
     Render the About Us page with information about the company.
 
-    Retrieves details about the company, including mission and vision, 
+    Retrieves details about the company, including mission and vision,
     skills, values, portfolios and services.
 
-    Args: 
+    Args:
         request(HttpRequest): The request object.
     Return:
         HttpResponse: Rendered template with context data.
@@ -37,13 +37,13 @@ def load_about (request):
     # Retrieve the Company detail
     company = Company.objects.first()
     employees = company.employees.all()
-    
+
     # Extract portfolios from employees
     portfolio = [portfolio for employee in employees for portfolio in employee.portfolio.all()]
-    
+
     # Extract unique project types from portfolio
-    project_type = {project.type.slang for project in portfolio}
-    
+    project_type = {project.type_project.slang for project in portfolio}
+
     # Call information_company from main.vies to get additional company information
     inf_company = information_company()
 
@@ -63,4 +63,4 @@ def load_about (request):
 
     # Render the template with the context
     return render(request, 'about_templates/about.html', context)
-    
+
