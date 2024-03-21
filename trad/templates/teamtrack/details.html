@@ -1,0 +1,21 @@
+<div class="col-lg-4">
+    <div class="portfolio-info">
+      <strong style="font-size: x-large;">{{ Name }}</strong>
+      <br>
+      <span class="weak">{{ High }}</span>
+      <hr>
+      
+      <ul>
+        <li><strong>Profession</strong>:  {{ Profession}} </li>
+        <li><strong>Phone</strong>:       {{ Phone }} </li>
+        <li><strong>Email</strong>:       {{ Email }} </li>                  
+        {% if LinkedIn %}
+          <li><strong>LinkedIn</strong>: <a href="{{ LinkedIn }}">{{ LinkedIn}}</a></li>
+        {% endif %}
+        {% if Git %}
+          <li><strong>GitHub</strong>: <a href="{{ Git }}">{{ Git }} </a></li>
+        {% endif %}
+        <li><strong>Keywords</strong>{{ Keywords }}</li>
+      </ul>
+    </div>
+</div>

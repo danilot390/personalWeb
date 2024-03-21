@@ -9,6 +9,7 @@ URL configuration for trad project.
 urlpatterns = [
     path('', include('main.urls')),
     path('', include('about.urls')),
+    path('', include('teamtrack.urls')),  
     path('tradmin/', admin.site.urls),
 ]
 

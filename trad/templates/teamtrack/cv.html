@@ -1,0 +1,43 @@
+<div class="portfolio-info">
+    <div class="col-lg-12">
+      <h3>Profile</h3>
+      {{ Profile }}  
+      <br><br>
+
+      <h3>Formation</h3>
+      {% for formation in formations %}
+        <strong>{{ formation.type_degree }} in {{ formation.career }}</strong> at {{ formation.institution }}, {{ formation.location }}, {{ formation.end|default_if_none:"Active" }}
+        <br>
+        <strong>Keywords,</strong> {{ formation.keywords }} 
+        <br>
+      {% endfor %}
+      <br>
+      <h3>Experience</h3>
+      
+      {% for exp in experiences %}
+        <strong>{{ exp.position }}</strong> at {{ exp.company }}, {{ exp.location}}, {{ exp.start }} to {{ exp.end|default_if_none:"Active" }} <br>
+        <ul>
+          {% for duty in exp.duties.all %}
+            <li>{{duty}}</li>
+          {% endfor %}                          
+        </ul>
+        <strong>Keywords, </strong> {{exp.keywords}}
+        <br><br>
+      {% endfor %}
+
+      <h3>Achievements</h3>
+      <ul>
+      {% for achievement in achievements %}
+        <li>{{achievement}}</li>
+      {% endfor %}  
+      </ul>
+
+      <h3>References</h3>
+      
+      {% for ref in references %}
+      {{ref}}
+      {% endfor %}
+          
+          
+    </div>
+</div>

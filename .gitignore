@@ -1,3 +1,6 @@
+# Personal Data
+trad/main/management/commands/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -74,6 +77,7 @@ db.sqlite3-journal
 migrations/
 media/
 static/assets/img/
+trad/static/assets/img/
 # Flask stuff:
 instance/
 .webassets-cache

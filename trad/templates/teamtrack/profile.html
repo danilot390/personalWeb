@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <br/>
+          <div class="row gy-4">
+  
+            <div class="col-lg-8" style="text-align: center;">
+              <img src="{{Img_profile}}" alt="" class="img-fluid" > 
+            </div>
+  
+            {% include "teamtrack/details.html" %}
+          
+            {% include "teamtrack/cv.html" %}
+  
+          </div>
+
+          {% include "teamtrack/portfolio_personal.html" %}
+
+  
+        </div>
+      </section><!-- End Portfolio Details Section -->
+{% endblock %}
