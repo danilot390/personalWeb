@@ -93,7 +93,6 @@ class Portfolio(models.Model):
     type_project = models.ForeignKey("TypeProject", on_delete=models.CASCADE, related_name='portfolio', null=True, blank=True)
     name = models.CharField(max_length=150)
     description = models.TextField()
-    keywords = models.CharField(max_length=150)
     urls = models.URLField(max_length=200, null=True, blank=True)
     git = models.URLField(max_length=200, null=True, blank=True)
     weight = models.IntegerField()
@@ -103,6 +102,12 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return f'{self.description} @{self.employee.user}'
+    
+    # Method to retrieve keywords related to the portfolio
+    # Fetching related skills from the associated skills field
+    def keywords(self):
+        related_skills = self.skills.all()  
+        return ', '.join(str(skill.skill) for skill in related_skills)
 
 # Skill Model: Model for Skills
 class Skill(models.Model):

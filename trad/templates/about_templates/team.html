@@ -19,7 +19,7 @@
                             </div>  
                         </div>
                         <div class="member-info">
-                            <h4>{{employee.user.get_full_name}}</h4>
+                            <h4><a href="{% url 'teamtrack:profile' id=employee.user.id %}"><i class="bi bi-person-lines-fill"></i> {{employee.user.get_full_name}}</a></h4>
                             <span>{{employee.position}}</span>
                         </div>
                     </div>
