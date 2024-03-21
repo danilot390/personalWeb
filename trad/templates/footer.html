@@ -5,17 +5,17 @@
 
         <div class="col-lg-3 col-md-6">
           <div class="footer-info">
-            <h3>{{inf_company.name }}<span>.</span></h3>
+            <h3>{{company_name }}<span>.</span></h3>
             <p>
-              {{ inf_company.location}}<br><br>
-              <strong>Phone:</strong> {{ inf_company.phone }}<br>
-              <strong>Email:</strong> {{ inf_company.email }}<br>
+              {{ company_location }}<br><br>
+              <strong>Phone:</strong> {{ company_phone }}<br>
+              <strong>Email:</strong> {{ company_email }}<br>
             </p>
             
-            {% if inf_company.social %}
+            {% if company_social %}
             <div class="social-links mt-3">
               
-              {% for media in inf_company.social %}
+              {% for media in company_social %}
                 <a href="{{ media.url }}" class="{{ media.slug }}"><i class="bx bxl-{{ media.slug }}"></i></a>
               {% endfor %}
       
@@ -26,12 +26,12 @@
           </div>
         </div>
         
-        {% if inf_company.services %}
+        {% if company_services %}
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Our Services</h4>
           <ul>
             
-            {% for item in inf_company.services %}
+            {% for item in company_services %}
             <li><i class="bx bx-chevron-right"></i> <a href="#">{{ item.service }}</a></li>
             {% endfor %}
           
@@ -43,7 +43,7 @@
 
         <div class="col-lg-4 col-md-6 footer-newsletter">
           <h4>Our Slogan</h4>
-          <p style='font-family: Abril Fatface'><strong>{{inf_company.slogan}}</strong></p>
+          <p style='font-family: Abril Fatface'><strong>{{company_slogan}}</strong></p>
 
         </div>
 
@@ -53,7 +53,7 @@
 
   <div class="container">
     <div class="copyright">
-      &copy; Copyright <strong><span>{{ inf_company.name }}</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>{{ company_name }}</span></strong>. All Rights Reserved
     </div>
     
   </div>

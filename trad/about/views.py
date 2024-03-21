@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from about.models import Company
-from main.views import information_company
 def typeProject(portfolio):
     """
     Categorize the portfolio projects by project type.
@@ -44,9 +43,6 @@ def load_about (request):
     # Extract unique project types from portfolio
     project_type = {project.type_project.slang for project in portfolio}
 
-    # Call information_company from main.vies to get additional company information
-    inf_company = information_company()
-
     # Extract unique skills from the employees
     skill_employees = {skill.skill for employee in employees for skill in employee.skills.all()}
 
@@ -57,7 +53,6 @@ def load_about (request):
         'employees' : employees,
         'portfolio' : portfolio,
         'type_project' : project_type,
-        'inf_company': inf_company,
         'skills_company' : skill_employees,
     }
 
