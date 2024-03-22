@@ -107,7 +107,7 @@ class Portfolio(models.Model):
     # Fetching related skills from the associated skills field
     def keywords(self):
         related_skills = self.skills.all()  
-        return ', '.join(str(skill.skill) for skill in related_skills)
+        return ', '.join(str(skill.skill.skill) for skill in related_skills)
 
 # Skill Model: Model for Skills
 class Skill(models.Model):

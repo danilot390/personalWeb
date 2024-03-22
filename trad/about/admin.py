@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from teamtrack.models import PortfolioSkill
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
@@ -41,6 +42,9 @@ class TypeProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'slang', 'created_at', 'updated_at')
     search_fields = ('name', 'slang')
 
+class PortFolioSkillInLine(admin.TabularInline):
+    model = PortfolioSkill
+    extra = 1
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
     """
@@ -48,6 +52,7 @@ class PortfolioAdmin(admin.ModelAdmin):
     """
     list_display = ('employee', 'type_project', 'name', 'created_at', 'updated_at')
     search_fields = ('employee__user__username', 'type__name', 'name')
+    inlines = [PortFolioSkillInLine]
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
